@@ -14,6 +14,7 @@ Remind users to complete their profile and upload an avatar within x hours after
 - if user has not uploaded an avatar
 - additional custom text for the notification can be specified
 - admin can define the time to display the notification after registration
+- admin can specify the pages where the notification should be displayed
 - available languages: en
 
 

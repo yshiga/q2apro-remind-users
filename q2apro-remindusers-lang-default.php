@@ -15,6 +15,7 @@
 		
 		// plugin
 		'message_profile' => 'Hi ^1$username$^2, your profile is only $percentage$ % complete.',
+		'message_profile_empty' => 'Hi ^1$username$^2, your profile is still empty.',
 		'message_avatar' => 'Your avatar is still missing. Please upload a photo.',
 		'message_account' => 'You can fill your ^3profile here^4.',
 		'admin_remindusers_timer' => 'Time to show the notification after registration (in hours):',
