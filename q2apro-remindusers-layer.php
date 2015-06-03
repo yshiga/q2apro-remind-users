@@ -59,7 +59,7 @@
 												'^2' => '</a>',
 											));
 							}
-							else if($profilecompletion<100) {
+							else if($profilecompletion< (int)(qa_opt('q2apro_remindusers_goal'))) {
 								$noticetext .= str_replace('$username$', $handle, qa_lang('q2apro_remindusers_lang/message_profile'));
 								// link username to public user profile
 								$noticetext = strtr($noticetext, array(
