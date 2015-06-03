@@ -21,6 +21,8 @@
 					return null; // 2 hours
 				case 'q2apro_remindusers_pages':
 					return 'qa,question,questions'; // default pages
+				case 'q2apro_remindusers_avator_required':
+					return 1; // true
 				default:
 					return null;
 			}
@@ -39,6 +41,7 @@
 				qa_opt('q2apro_remindusers_timer', (int)qa_post_text('q2apro_remindusers_timer')); // hours
 				qa_opt('q2apro_remindusers_customtext', (String)qa_post_text('q2apro_remindusers_customtext')); // custom text
 				qa_opt('q2apro_remindusers_pages', str_replace(' ', '', (String)qa_post_text('q2apro_remindusers_pages'))); // pages
+				qa_opt('q2apro_remindusers_avator_required', (bool)qa_post_text('q2apro_remindusers_avator_required')); 
 				$ok = qa_lang('admin/options_saved');
 			}
 			
@@ -52,6 +55,13 @@
 				'value' => qa_opt('q2apro_remindusers_enabled'),
 			);
 			
+			$fields[] = array(
+				'type' => 'checkbox',
+				'label' => qa_lang('q2apro_remindusers_lang/admin_avator_required'), 
+				'tags' => 'name="q2apro_remindusers_requirephoto"',
+				'value' => qa_opt('q2apro_remindusers_avator_required'),
+			);
+
 			$fields[] = array(
 				'type' => 'number',
 				'label' => qa_lang('q2apro_remindusers_lang/admin_remindusers_timer'),

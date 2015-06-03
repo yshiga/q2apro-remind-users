@@ -40,7 +40,6 @@
 						
 						$profilecompletion = round(100*$userprofile_count/$userfields_total);
 						
-						$avataruploaded = (qa_get_logged_in_flags() & QA_USER_FLAGS_SHOW_AVATAR) || (qa_get_logged_in_flags() & QA_USER_FLAGS_SHOW_GRAVATAR);
 						
 						$notifypages = explode(',', str_replace(' ', '', qa_opt('q2apro_remindusers_pages')));
 
@@ -72,8 +71,11 @@
 							}
 							
 							// add avatar notice
-							if(!$avataruploaded) {
-								$noticetext .= '<br />'.qa_lang('q2apro_remindusers_lang/message_avatar');
+							if(qa_opt('q2apro_remindusers_avator_required')) {
+								$avataruploaded = (qa_get_logged_in_flags() & QA_USER_FLAGS_SHOW_AVATAR) || (qa_get_logged_in_flags() & QA_USER_FLAGS_SHOW_GRAVATAR);
+								if(!$avataruploaded) {
+									$noticetext .= '<br />'.qa_lang('q2apro_remindusers_lang/message_avatar');
+								}
 							}
 							
 							if(!empty($noticetext)) {
