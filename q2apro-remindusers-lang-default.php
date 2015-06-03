@@ -18,7 +18,7 @@
 		'message_profile_empty' => 'Hi ^1$username$^2, your profile is still empty.',
 		'message_avatar' => 'Your avatar is still missing. Please upload a photo.',
 		'message_account' => 'You can fill your ^3profile here^4.',
-		'admin_remindusers_timer' => 'Time to show the notification after registration (in hours):',
+		'admin_remindusers_timer' => 'Time to show the notification after registration. Please set 0 if you want show it always. (in hours):',
 		'admin_remindusers_customtext' => 'Optional text below the notification:',
 		'admin_remindusers_pages' => 'Pages where to show the notice (separate by comma):',
 	);

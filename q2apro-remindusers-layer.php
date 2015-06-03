@@ -17,8 +17,9 @@
 					// check age of user account
 					$accountage = strtotime('now') - qa_get_logged_in_user_field('created');
 					
-					// show notice only within specified hours
-					if($accountage < (int)(qa_opt('q2apro_remindusers_timer'))*60*60) {
+					// show notice only within specified hours. if 0, show always.
+					$remindusers_timer = qa_opt('q2apro_remindusers_timer');
+					if($remindusers_timer === '0' || $accountage < (int)($remindusers_timer)*60*60) {
 					
 						// by default there are 4 userfields (name, location, website, about)
 						$userfields_total = qa_db_read_one_value(
